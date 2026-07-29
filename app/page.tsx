@@ -56,26 +56,39 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <div style={{ background: '#faf9f7', minHeight: '100vh' }} className="font-['Work_Sans']">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-700 to-blue-600 text-white py-8">
+      <header style={{ background: '#061b0e', borderBottomColor: 'rgba(6,27,14,0.1)' }} className="text-white py-8 border-b">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-2">🏞️ Land Search</h1>
-          <p className="text-green-100">Find your perfect property today</p>
+          <h1 style={{ fontFamily: 'Manrope' }} className="text-5xl font-bold mb-2">
+            Land Legacy
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,0.8)' }} className="text-lg">
+            Premium Real Estate Discovery
+          </p>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
-              <h2 className="text-xl font-bold mb-4 text-gray-800">Filters</h2>
+            <div
+              style={{
+                background: '#f4f3f1',
+                borderRadius: '12px',
+                borderColor: 'rgba(67,72,67,0.2)'
+              }}
+              className="p-6 sticky top-4 border"
+            >
+              <h2 style={{ fontFamily: 'Manrope', color: '#061b0e' }} className="text-xl font-bold mb-6">
+                Filters
+              </h2>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {/* Location Filters */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     City
                   </label>
                   <input
@@ -83,12 +96,16 @@ export default function Home() {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="e.g., Austin"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     State
                   </label>
                   <input
@@ -97,12 +114,16 @@ export default function Home() {
                     onChange={(e) => setState(e.target.value.toUpperCase())}
                     placeholder="e.g., TX"
                     maxLength={2}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     Zip Code
                   </label>
                   <input
@@ -110,13 +131,17 @@ export default function Home() {
                     value={zipCode}
                     onChange={(e) => setZipCode(e.target.value)}
                     placeholder="e.g., 78741"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 {/* Land Size Filter */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     Min Acres
                   </label>
                   <input
@@ -124,13 +149,17 @@ export default function Home() {
                     value={minAcres}
                     onChange={(e) => setMinAcres(e.target.value)}
                     placeholder="e.g., 20"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 {/* Price Filters */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     Min Price ($)
                   </label>
                   <input
@@ -138,12 +167,16 @@ export default function Home() {
                     value={minPrice}
                     onChange={(e) => setMinPrice(e.target.value)}
                     placeholder="e.g., 100000"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  <label style={{ color: '#061b0e' }} className="block text-sm font-medium mb-2">
                     Max Price ($)
                   </label>
                   <input
@@ -151,22 +184,36 @@ export default function Home() {
                     value={maxPrice}
                     onChange={(e) => setMaxPrice(e.target.value)}
                     placeholder="e.g., 500000"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    style={{
+                      borderColor: 'rgba(67,72,67,0.3)',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full px-3 py-2 border focus:outline-none focus:ring-2 transition"
                   />
                 </div>
 
                 {/* Buttons */}
-                <div className="space-y-2 pt-4">
+                <div className="space-y-3 pt-6">
                   <button
                     onClick={handleSearch}
                     disabled={loading}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition disabled:opacity-50"
+                    style={{
+                      background: '#061b0e',
+                      color: '#ffffff',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full font-semibold py-3 px-4 transition hover:opacity-90 disabled:opacity-50"
                   >
                     {loading ? 'Searching...' : 'Search'}
                   </button>
                   <button
                     onClick={handleReset}
-                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition"
+                    style={{
+                      background: '#e3e2e0',
+                      color: '#061b0e',
+                      borderRadius: '8px'
+                    }}
+                    className="w-full font-semibold py-3 px-4 transition hover:opacity-80"
                   >
                     Clear All
                   </button>
@@ -177,8 +224,8 @@ export default function Home() {
 
           {/* Results */}
           <div className="lg:col-span-3">
-            <div className="mb-4">
-              <p className="text-gray-600 text-sm">
+            <div className="mb-6">
+              <p style={{ color: '#434843' }} className="text-sm font-medium">
                 {results.length === 0 && !loading
                   ? 'No properties found'
                   : `Showing ${results.length} propert${results.length === 1 ? 'y' : 'ies'}`}
@@ -187,45 +234,55 @@ export default function Home() {
 
             {loading ? (
               <div className="flex justify-center items-center h-64">
-                <div className="text-gray-500">Loading...</div>
+                <div style={{ color: '#434843' }}>Loading...</div>
               </div>
             ) : results.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                <p className="text-gray-500">No properties match your search criteria.</p>
+              <div
+                style={{ background: '#f4f3f1', borderRadius: '12px', borderColor: 'rgba(67,72,67,0.2)' }}
+                className="p-8 text-center border"
+              >
+                <p style={{ color: '#434843' }}>No properties match your search criteria.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {results.map((property) => (
                   <Link key={property.id} href={`/property/${property.id}`}>
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer transform hover:scale-105">
+                    <div
+                      style={{
+                        background: '#ffffff',
+                        borderRadius: '12px',
+                        border: '1px solid rgba(67,72,67,0.1)'
+                      }}
+                      className="overflow-hidden hover:shadow-lg transition cursor-pointer"
+                    >
                       <div className="relative h-48 bg-gray-200 overflow-hidden">
                         <img
                           src={property.imageUrl}
                           alt={property.address}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute top-3 right-3 bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
+                        <div style={{ background: '#061b0e', borderRadius: '6px' }} className="absolute top-3 right-3 text-white px-3 py-1 text-sm font-semibold">
                           {property.acres.toFixed(1)} acres
                         </div>
                       </div>
 
                       <div className="p-5">
-                        <h3 className="font-bold text-lg text-gray-800 mb-1">
+                        <h3 style={{ color: '#061b0e', fontFamily: 'Manrope' }} className="font-bold text-lg mb-1">
                           {property.address}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-3">
+                        <p style={{ color: '#434843' }} className="text-sm mb-3">
                           {property.city}, {property.state} {property.zipCode}
                         </p>
 
-                        <p className="text-gray-700 text-sm mb-4 line-clamp-2">
+                        <p style={{ color: '#434843' }} className="text-sm mb-4 line-clamp-2">
                           {property.description}
                         </p>
 
-                        <div className="border-t pt-3">
-                          <p className="text-2xl font-bold text-green-600">
+                        <div className="border-t pt-3" style={{ borderColor: 'rgba(67,72,67,0.2)' }}>
+                          <p style={{ color: '#076350', fontFamily: 'Manrope' }} className="text-2xl font-bold">
                             {formatPrice(property.price)}
                           </p>
-                          <p className="text-gray-600 text-sm">
+                          <p style={{ color: '#434843' }} className="text-sm">
                             {formatPrice(property.pricePerAcre)}/acre
                           </p>
                         </div>

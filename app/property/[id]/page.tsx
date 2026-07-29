@@ -10,12 +10,15 @@ export default function PropertyDetail() {
 
   if (!property) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div style={{ background: '#faf9f7', minHeight: '100vh' }} className="flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Property Not Found</h1>
+          <h1 style={{ color: '#061b0e', fontFamily: 'Manrope' }} className="text-2xl font-bold mb-4">
+            Property Not Found
+          </h1>
           <button
             onClick={() => router.push('/')}
-            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg"
+            style={{ background: '#061b0e', color: '#ffffff' }}
+            className="font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition"
           >
             Back to Search
           </button>
@@ -33,25 +36,28 @@ export default function PropertyDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <div style={{ background: '#faf9f7', minHeight: '100vh' }} className="font-['Work_Sans']">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-700 to-blue-600 text-white py-6">
+      <header style={{ background: '#061b0e', color: '#ffffff', borderBottomColor: 'rgba(6,27,14,0.1)' }} className="py-6 border-b">
         <div className="max-w-4xl mx-auto px-4">
           <button
             onClick={() => router.push('/')}
-            className="mb-4 text-green-100 hover:text-white font-semibold flex items-center gap-2"
+            style={{ color: 'rgba(255,255,255,0.8)' }}
+            className="mb-4 hover:text-white font-semibold flex items-center gap-2 transition"
           >
             ← Back to Search
           </button>
-          <h1 className="text-3xl font-bold">{property.address}</h1>
-          <p className="text-green-100">
+          <h1 style={{ fontFamily: 'Manrope' }} className="text-4xl font-bold">
+            {property.address}
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,0.8)' }}>
             {property.city}, {property.state} {property.zipCode}
           </p>
         </div>
-      </div>
+      </header>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div style={{ background: '#ffffff', borderRadius: '12px', border: '1px solid rgba(67,72,67,0.1)' }} className="overflow-hidden shadow-sm">
           {/* Image */}
           <div className="h-96 bg-gray-200 overflow-hidden">
             <img
@@ -65,23 +71,23 @@ export default function PropertyDetail() {
           <div className="p-8">
             {/* Key Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-l-4 border-green-600">
-                <p className="text-gray-600 text-sm font-semibold mb-1">Total Land</p>
-                <p className="text-3xl font-bold text-green-600">
+              <div style={{ background: '#d0e9d4', borderRadius: '8px', borderLeftColor: '#061b0e' }} className="p-6 border-l-4">
+                <p style={{ color: '#061b0e' }} className="text-sm font-medium mb-1">Total Land</p>
+                <p style={{ color: '#061b0e', fontFamily: 'Manrope' }} className="text-3xl font-bold">
                   {property.acres.toFixed(1)} acres
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-600">
-                <p className="text-gray-600 text-sm font-semibold mb-1">Total Price</p>
-                <p className="text-3xl font-bold text-blue-600">
+              <div style={{ background: '#b5c9d9', borderRadius: '8px', borderLeftColor: '#051925' }} className="p-6 border-l-4">
+                <p style={{ color: '#051925' }} className="text-sm font-medium mb-1">Total Price</p>
+                <p style={{ color: '#051925', fontFamily: 'Manrope' }} className="text-3xl font-bold">
                   {formatPrice(property.price)}
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-l-4 border-purple-600">
-                <p className="text-gray-600 text-sm font-semibold mb-1">Price per Acre</p>
-                <p className="text-3xl font-bold text-purple-600">
+              <div style={{ background: '#e7c08c', borderRadius: '8px', borderLeftColor: '#76592e' }} className="p-6 border-l-4">
+                <p style={{ color: '#76592e' }} className="text-sm font-medium mb-1">Price per Acre</p>
+                <p style={{ color: '#76592e', fontFamily: 'Manrope' }} className="text-3xl font-bold">
                   {formatPrice(property.pricePerAcre)}
                 </p>
               </div>
@@ -89,48 +95,63 @@ export default function PropertyDetail() {
 
             {/* Description */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Description</h2>
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <h2 style={{ color: '#061b0e', fontFamily: 'Manrope' }} className="text-2xl font-bold mb-4">
+                Description
+              </h2>
+              <p style={{ color: '#434843' }} className="leading-relaxed text-lg">
                 {property.description}
               </p>
             </div>
 
             {/* Details */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Property Details</h2>
+              <h2 style={{ color: '#061b0e', fontFamily: 'Manrope' }} className="text-2xl font-bold mb-4">
+                Property Details
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">Address</p>
-                  <p className="text-lg text-gray-800">{property.address}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">Address</p>
+                  <p style={{ color: '#061b0e' }} className="text-lg font-medium">{property.address}</p>
                 </div>
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">City</p>
-                  <p className="text-lg text-gray-800">{property.city}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">City</p>
+                  <p style={{ color: '#061b0e' }} className="text-lg font-medium">{property.city}</p>
                 </div>
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">State</p>
-                  <p className="text-lg text-gray-800">{property.state}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">State</p>
+                  <p style={{ color: '#061b0e' }} className="text-lg font-medium">{property.state}</p>
                 </div>
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">Zip Code</p>
-                  <p className="text-lg text-gray-800">{property.zipCode}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">Zip Code</p>
+                  <p style={{ color: '#061b0e' }} className="text-lg font-medium">{property.zipCode}</p>
                 </div>
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">Latitude</p>
-                  <p className="text-lg text-gray-800">{property.lat.toFixed(4)}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">Latitude</p>
+                  <p style={{ color: '#061b0e', fontFamily: 'JetBrains Mono' }} className="text-lg font-medium">{property.lat.toFixed(4)}</p>
                 </div>
-                <div className="border rounded-lg p-4">
-                  <p className="text-gray-600 text-sm font-semibold mb-1">Longitude</p>
-                  <p className="text-lg text-gray-800">{property.lng.toFixed(4)}</p>
+                <div style={{ borderColor: 'rgba(67,72,67,0.2)', borderRadius: '8px' }} className="border rounded-lg p-4">
+                  <p style={{ color: '#434843' }} className="text-sm font-medium mb-1">Longitude</p>
+                  <p style={{ color: '#061b0e', fontFamily: 'JetBrains Mono' }} className="text-lg font-medium">{property.lng.toFixed(4)}</p>
                 </div>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-6 rounded-lg text-center">
-              <h3 className="text-2xl font-bold mb-2">Interested in this property?</h3>
-              <p className="mb-4">Contact our real estate team for more information</p>
-              <button className="bg-white text-green-600 hover:bg-green-50 font-bold py-3 px-8 rounded-lg transition">
+            <div style={{ background: '#061b0e', borderRadius: '8px' }} className="text-white p-8 text-center">
+              <h3 style={{ fontFamily: 'Manrope' }} className="text-2xl font-bold mb-2">
+                Interested in this property?
+              </h3>
+              <p style={{ color: 'rgba(255,255,255,0.9)' }} className="mb-6">
+                Contact our real estate team for more information
+              </p>
+              <button
+                style={{
+                  background: '#ffffff',
+                  color: '#061b0e',
+                  borderRadius: '8px'
+                }}
+                className="font-bold py-3 px-8 hover:opacity-90 transition"
+              >
                 Schedule a Viewing
               </button>
             </div>
